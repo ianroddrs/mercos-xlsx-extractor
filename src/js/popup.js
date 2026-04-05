@@ -16,5 +16,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     btnGerar.disabled = true;
     mensagem.innerText = "Navegue até aos detalhes de um pedido no Mercos para usar a extensão.";
   }
-  
+
+  // Ação ao clicar no botão
+  btnGerar.addEventListener('click', async () => {
+    try {
+      btnGerar.innerText = "Gerando...";
+      btnGerar.disabled = true;
+      
+      // 1. Injeta a biblioteca SheetJS na página
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: ['js/xlsx.full.min.js']
+      });
+      
+      // 2. Injeta o código de extração
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: ['js/content.js']
+      });
+      
+      btnGerar.innerText = "Concluído";
+      btnGerar.style.backgroundColor = "#10b981";
+      btnGerar.style.color = "white";
+      
+      mensagem.innerHTML = "Download iniciado";
+    } catch (error) {
+    
+      mensagem.innerHTML = error.message;
+      mensagem.style.color = "#ff0000";
+
+    }
+
+  });
+    
 });
