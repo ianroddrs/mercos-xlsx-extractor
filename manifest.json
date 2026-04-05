@@ -9,12 +9,12 @@
     "tabs"
   ],
   "icons": {
-    "16": "src/icon_active.png",
-    "48": "src/icon_active.png",
-    "128": "src/icon_active.png"
+    "16": "src/img/icon_active.png",
+    "48": "src/img/icon_active.png",
+    "128": "src/img/icon_active.png"
   },
   "action": {
-    "default_popup": "src/template/popup.html",
+    "default_popup": "src/templates/popup.html",
     "default_icon": "src/img/icon_inactive.png"
   },
   "host_permissions": [

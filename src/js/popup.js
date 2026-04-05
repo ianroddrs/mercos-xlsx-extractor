@@ -19,20 +19,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Ação ao clicar no botão
   btnGerar.addEventListener('click', async () => {
+    btnGerar.innerText = "Gerando...";
+    btnGerar.disabled = true;
+    
     try {
-      btnGerar.innerText = "Gerando...";
-      btnGerar.disabled = true;
-      
       // 1. Injeta a biblioteca SheetJS na página
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        files: ['js/xlsx.full.min.js']
+        files: ['src/js/xlsx.full.min.js']
       });
       
       // 2. Injeta o código de extração
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        files: ['js/content.js']
+        files: ['src/js/content.js']
       });
       
       btnGerar.innerText = "Concluído";

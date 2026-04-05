@@ -9,8 +9,8 @@ function exportarDados() {
     linhas_da_tabela.forEach(linha => {
         let tds = linha.querySelectorAll('td');
         if(tds.length >= 4) {
-            let codigo = td[1].innerText.trim();
-            let qtd = td[3].innerText.trim();
+            let codigo = tds[1].innerText.trim();
+            let qtd = tds[3].innerText.trim();
 
             dadosParaExcel.push({
                 "sku": codigo,
@@ -33,7 +33,6 @@ function exportarDados() {
         }
 
         XLSX.writeFile(workbook, `${nomeFicheiro}.xlsx`);
-
     } else {
         throw new Error("Erro: Biblioteca Excel não carregada.");
     }
