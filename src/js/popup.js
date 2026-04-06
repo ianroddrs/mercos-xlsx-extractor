@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const extractBtn = document.getElementById('extract-btn');
   const mensagem = document.getElementById('mensagem');
+  const mensagemError = document.getElementById('error-message');
 
   // Obter a aba ativa no momento em que o utilizador clica na extensão
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -42,8 +43,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       mensagem.innerHTML = "Download iniciado";
     } catch (error) {
     
-      mensagem.innerHTML = error.message;
-      mensagem.style.color = "#ff0000";
+      mensagemError.innerHTML = error.message;
+      mensagemError.classList.remove('hidden')
 
     }
 
