@@ -1,44 +1,126 @@
-body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    width: 260px; 
-    padding: 15px; 
-    text-align: center; 
+/* Reset e tipografia básica */
+body {
+    width: 300px; /* Aumentei um pouco a largura para acomodar o footer */
+    padding: 0; /* Removido padding do body para usar nas seções */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #1a1a1a; /* Fundo principal escuro */
+    color: #e0e0e0; /* Texto principal claro */
     margin: 0;
-    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    height: stretch;
 }
 
-h3 {
-    margin-top: 0;
-    color: #333;
+/* Header */
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    background-color: #242424; /* Fundo ligeiramente mais claro para destacar o header */
+    border-bottom: 1px solid #333;
+}
+
+.header-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+h2 {
     font-size: 16px;
+    margin: 0;
+    color: #ffffff;
+    font-weight: 600;
 }
 
-button { 
-    padding: 12px; 
-    background: #2563eb; 
-    color: white; 
-    border: none; 
-    cursor: pointer; 
-    width: 100%; 
-    border-radius: 6px; 
+/* Conteúdo Principal */
+.popup-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;}
+
+/* Descrição e texto de erro */
+p {
+    font-size: 13px;
+    color: #b0b0b0; /* Texto secundário ligeiramente mais escuro */
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+#error-message {
+    color: #ff6b6b; /* Vermelho claro para mensagens de erro em fundo escuro */
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Estilo do botão principal */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Verde mantido, mas você pode mudar para a cor da sua marca */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background-color 0.2s, transform 0.1s; /* Transição suave e leve efeito de clique */
 }
 
-button:hover:not(:disabled) {
-    background: #1d4ed8;
+/* Efeitos de hover e active do botão */
+button:hover {
+    background-color: #45a049; /* Verde ligeiramente mais escuro no hover */
 }
 
-button:disabled { 
-    background: #cbd5e1; 
-    color: #64748b;
-    cursor: not-allowed; 
+button:active {
+    transform: translateY(1px); /* Leve deslocamento para baixo ao clicar */
 }
 
-#mensagem { 
-    margin-top: 15px; 
-    font-size: 13px; 
-    color: #475569; 
-    line-height: 1.4;
+/* Estilo do botão quando desabilitado */
+button:disabled {
+    background-color: #444; /* Fundo cinza escuro para estado desabilitado */
+    color: #888; /* Texto cinza escuro */
+    cursor: not-allowed;
+    transform: none; /* Remove o efeito de clique */
+}
+
+/* Footer */
+.popup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: #151515; /* Fundo mais escuro para o footer */
+    border-top: 1px solid #333;
+    font-size: 11px;
+    color: #888;
+}
+
+.developer-credit a {
+    color: #4CAF50; /* Link verde combinando com o botão */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.developer-credit a:hover {
+    color: #45a049;
+    text-decoration: underline;
+}
+
+.version {
+    font-family: monospace;
+    opacity: 0.8;
+}
+
+/* Elementos ocultos por padrão */
+.hidden {
+    display: none;
 }

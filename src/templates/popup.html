@@ -1,17 +1,27 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <script src="../js/popup.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercos XLSX Extractor</title>
     <link rel="stylesheet" href="../css/popup.css">
 </head>
 <body>
+    <header class="popup-header">
+        <img src="../img/icon_active.png" alt="Icon" class="header-icon">
+        <h2>Mercos Extractor</h2>
+    </header>
 
-    <main>
-        <h3>Exportar Pedido</h3>
-        <button id="btnGerar" disabled>Gerar Excel</button>
-        <div id="mensagem">Verificando página...</div>
+    <main class="popup-content">
+        <p id="mensagem">Extraia os sku's e quantidades dos produtos da página atual para uma planilha Excel.</p>
+        <button id="extract-btn">Extrair Produtos</button>
+        <p id="error-message" class="hidden"></p>
     </main>
-    
+
+    <footer class="popup-footer">
+        <span class="developer-credit">Developed by: <a href="https://github.com/ianroddrs" target="_blank">@ianroddrs</a></span>
+        <span class="version">v1.0.0</span>
+    </footer>
+
+    <script src="../js/popup.js"></script>
 </body>
 </html>
