@@ -1,21 +1,20 @@
 const regexUrl = /^https:\/\/app\.mercos\.com\/\d+\/pedidos\/\d+\/detalhar\/?/;
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.url || changeInfo.status === 'complete') {
-        if (tab.url) {
-            const isPaginaPedido = regexUrl.test(tab.url)
+    // 1. Previne erros ao tentar mudar ícone em páginas internas do Chrome
+    if (!tab.url || tab.url.startsWith('chrome://')) return;
 
-            if (isPaginaPedido) {
-                chrome.action.setIcon({
-                    path: { "48": "/src/img/icon_active.png" },
-                    tabId: tabId
-                }).catch(err => console.error("Erro no ícone ativo:", err));
-            } else {
-                chrome.action.setIcon({
-                    path: { "48": "/src/img/icon_inactive.png" },
-                    tabId: tabId
-                }).catch(err => console.error("Erro no ícone inativo:", err));
-            }
-        }
+    if (changeInfo.url || changeInfo.status === 'complete') {
+        const isPaginaPedido = regexUrl.test(tab.url);
+
+        // 2. Definimos o caminho como uma STRING simples em vez de um objeto {"48": ...}
+        const iconPath = isPaginaPedido 
+            ? "/src/img/icon_active.png" 
+            : "/src/img/icon_inactive.png";
+
+        chrome.action.setIcon({
+            path: iconPath,
+            tabId: tabId
+        }).catch(err => console.error("Erro ao mudar o ícone:", err));
     }
 });
