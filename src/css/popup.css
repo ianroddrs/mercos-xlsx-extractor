@@ -1,10 +1,11 @@
 /* Reset e tipografia básica */
 body {
-    width: 300px; /* Aumentei um pouco a largura para acomodar o footer */
-    padding: 0; /* Removido padding do body para usar nas seções */
+    width: 100%;
+    min-width: 300px;
+    padding: 0; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #1a1a1a; /* Fundo principal escuro */
-    color: #e0e0e0; /* Texto principal claro */
+    background-color: #1a1a1a;
+    color: #e0e0e0;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -17,7 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 12px 15px;
-    background-color: #242424; /* Fundo ligeiramente mais claro para destacar o header */
+    background-color: #242424;
     border-bottom: 1px solid #333;
 }
 
@@ -46,7 +47,7 @@ h2 {
 /* Descrição e texto de erro */
 p {
     font-size: 13px;
-    color: #b0b0b0; /* Texto secundário ligeiramente mais escuro */
+    color: #b0b0b0; 
     margin-top: 0;
     margin-bottom: 15px;
     line-height: 1.4;
@@ -54,7 +55,7 @@ p {
 }
 
 #error-message {
-    color: #ff6b6b; /* Vermelho claro para mensagens de erro em fundo escuro */
+    color: #ff6b6b;
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 0;
@@ -64,7 +65,7 @@ p {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50; /* Verde mantido, mas você pode mudar para a cor da sua marca */
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
@@ -76,19 +77,19 @@ button {
 
 /* Efeitos de hover e active do botão */
 button:hover {
-    background-color: #45a049; /* Verde ligeiramente mais escuro no hover */
+    background-color: #45a049; 
 }
 
 button:active {
-    transform: translateY(1px); /* Leve deslocamento para baixo ao clicar */
+    transform: translateY(1px); 
 }
 
 /* Estilo do botão quando desabilitado */
 button:disabled {
-    background-color: #444; /* Fundo cinza escuro para estado desabilitado */
-    color: #888; /* Texto cinza escuro */
+    background-color: #444; 
+    color: #888;
     cursor: not-allowed;
-    transform: none; /* Remove o efeito de clique */
+    transform: none; 
 }
 
 /* Footer */
@@ -97,14 +98,14 @@ button:disabled {
     justify-content: space-between;
     align-items: center;
     padding: 8px 15px;
-    background-color: #151515; /* Fundo mais escuro para o footer */
+    background-color: #151515;
     border-top: 1px solid #333;
     font-size: 11px;
     color: #888;
 }
 
 .developer-credit a {
-    color: #4CAF50; /* Link verde combinando com o botão */
+    color: #4CAF50;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
